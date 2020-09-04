@@ -7,6 +7,7 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SwitchIcon from "./components/switchIcon";
 import Link from "./components/link";
+import Copyright from "./components/copyright";
 
 library.add(fab, fas, far); //他のコンポーネントから簡単に呼び出せるようにするための登録処理？
 function App() {
@@ -42,6 +43,9 @@ function App() {
                linkUrl={"http://x-point-1.net/"}
                linkName={"X.1"}
             />
+         </div>
+         <div className="copyright-box">
+            <Copyright />
          </div>
       </div>
    );
