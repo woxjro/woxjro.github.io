@@ -1,9 +1,12 @@
 .App {
+   font-family: "Teko", sans-serif;
+   font-size: large;
    text-align: center;
    height: 100vh;
    width: 100vw;
    background-color: #22272a;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
@@ -27,6 +30,9 @@
       width: calc(100vw / 2.5);
       height: calc(100vw / 2.5);
    }
+   .link a {
+      margin-left: calc(100vw / 50);
+   }
 }
 @media screen and (min-width: 500px) {
    .icon .container {
@@ -39,4 +45,23 @@
       width: calc(100vw / 4.5);
       height: calc(100vw / 4.5);
    }
+   .link a {
+      margin-left: calc(100vw / 80);
+   }
+}
+
+.switchIcon {
+   margin-bottom: calc(100vh / 30);
+}
+
+.link {
+   margin-bottom: calc(100vh / 80);
+}
+.link .container {
+   display: flex;
+   flex-direction: row;
+}
+.link a {
+   color: white;
+   text-decoration: none;
 }
