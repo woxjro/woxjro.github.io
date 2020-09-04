@@ -1,10 +1,9 @@
 import React from "react";
-import Img from "../images/cat.jpg";
-export default function Icon() {
+export default function Icon({ img }) {
    return (
       <div className="icon">
          <div className="icon container">
-            <img className="icon img" src={Img} alt="icon" />
+            <img className="icon img" src={img} alt="icon" />
          </div>
       </div>
    );

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Icon from "./components/icon";
+import SwitchIcon from "./components/switchIcon";
 function App() {
    return (
       <div className="App">
-         <Icon />
+         <SwitchIcon />
       </div>
    );
 }
