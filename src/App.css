@@ -14,12 +14,29 @@
    align-items: center;
    border-radius: 50%;
    background-color: white;
-   width: calc(100vw / 4 + 0.7vw);
-   height: calc(100vw / 4 + 0.7vw);
 }
 
-.icon .img {
-   border-radius: 50%;
-   width: calc(100vw / 4);
-   height: calc(100vw / 4);
+@media screen and (max-width: 499px) {
+   .icon .container {
+      width: calc(100vw / 2.5 + 0.7vw);
+      height: calc(100vw / 2.5 + 0.7vw);
+   }
+
+   .icon .img {
+      border-radius: 50%;
+      width: calc(100vw / 2.5);
+      height: calc(100vw / 2.5);
+   }
+}
+@media screen and (min-width: 500px) {
+   .icon .container {
+      width: calc(100vw / 4.5 + 0.7vw);
+      height: calc(100vw / 4.5 + 0.7vw);
+   }
+
+   .icon .img {
+      border-radius: 50%;
+      width: calc(100vw / 4.5);
+      height: calc(100vw / 4.5);
+   }
 }
