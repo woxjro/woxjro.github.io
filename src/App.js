@@ -7,11 +7,12 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SwitchIcon from "./components/switchIcon";
 import Link from "./components/link";
+import LinksList from "./components/linksList";
 import Copyright from "./components/copyright";
 
 library.add(fab, fas, far);
 function App() {
-   const LinkInfoArr = [
+   const linkInfoArr = [
       {
          size: "lg",
          color: "white",
@@ -44,23 +45,8 @@ function App() {
    return (
       <div className="App">
          <SwitchIcon />
-         <div className="links">
-            {LinkInfoArr.map((LinkInfo) => {
-               const { size, color, icon, linkUrl, linkName } = LinkInfo;
-               return (
-                  <Link
-                     size={size}
-                     color={color}
-                     icon={icon}
-                     linkUrl={linkUrl}
-                     linkName={linkName}
-                  />
-               );
-            })}
-         </div>
-         <div className="copyright-box">
-            <Copyright />
-         </div>
+         <LinksList linkInfoArr={linkInfoArr} />
+         <Copyright />
       </div>
    );
 }
