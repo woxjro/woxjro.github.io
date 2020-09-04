@@ -9,7 +9,7 @@ import SwitchIcon from "./components/switchIcon";
 import Link from "./components/link";
 import Copyright from "./components/copyright";
 
-library.add(fab, fas, far); //他のコンポーネントから簡単に呼び出せるようにするための登録処理？
+library.add(fab, fas, far);
 function App() {
    const LinkInfoArr = [
       {
