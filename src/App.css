@@ -54,6 +54,13 @@
    margin-bottom: calc(100vh / 30);
 }
 
+.title {
+	color: white;
+	border-width: 1px;
+	border-bottom: solid;
+	border-color: white;
+}
+
 .link {
    margin-bottom: calc(100vh / 80);
 }
@@ -69,3 +76,8 @@
 .copyright .text {
    color: white;
 }
+
+i[class^='devicon'] {
+		font-size: 20px;
+}
+

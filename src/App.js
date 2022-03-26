@@ -9,6 +9,7 @@ import SwitchIcon from "./components/switchIcon";
 import Link from "./components/link";
 import LinksList from "./components/linksList";
 import Copyright from "./components/copyright";
+import TechStacks from "./components/techstacks";
 
 library.add(fab, fas, far);
 function App() {
@@ -45,7 +46,8 @@ function App() {
    return (
       <div className="App">
          <SwitchIcon />
-         <LinksList linkInfoArr={linkInfoArr} />
+				<LinksList linkInfoArr={linkInfoArr} />
+				 <TechStacks linkInfoArr={linkInfoArr} />
          <Copyright />
       </div>
    );
