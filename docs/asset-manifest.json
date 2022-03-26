@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c4892a1f.chunk.css",
-    "main.js": "/static/js/main.a17a5b82.chunk.js",
-    "main.js.map": "/static/js/main.a17a5b82.chunk.js.map",
+    "main.css": "/static/css/main.49d81fb6.chunk.css",
+    "main.js": "/static/js/main.10489d2c.chunk.js",
+    "main.js.map": "/static/js/main.10489d2c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f20336c6.js",
     "runtime-main.js.map": "/static/js/runtime-main.f20336c6.js.map",
     "static/js/2.ea44585e.chunk.js": "/static/js/2.ea44585e.chunk.js",
     "static/js/2.ea44585e.chunk.js.map": "/static/js/2.ea44585e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2fa639a8a4f0ad43071cd9d7cd3cad8e.js": "/precache-manifest.2fa639a8a4f0ad43071cd9d7cd3cad8e.js",
+    "precache-manifest.8e62e7ac10c5630ec6aef89835d8d26a.js": "/precache-manifest.8e62e7ac10c5630ec6aef89835d8d26a.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c4892a1f.chunk.css.map": "/static/css/main.c4892a1f.chunk.css.map",
+    "static/css/main.49d81fb6.chunk.css.map": "/static/css/main.49d81fb6.chunk.css.map",
     "static/js/2.ea44585e.chunk.js.LICENSE.txt": "/static/js/2.ea44585e.chunk.js.LICENSE.txt",
     "static/media/LaravelPlain.svg": "/static/media/LaravelPlain.5f48397e.svg",
     "static/media/cat.jpg": "/static/media/cat.4c701c69.jpg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.f20336c6.js",
     "static/js/2.ea44585e.chunk.js",
-    "static/css/main.c4892a1f.chunk.css",
-    "static/js/main.a17a5b82.chunk.js"
+    "static/css/main.49d81fb6.chunk.css",
+    "static/js/main.10489d2c.chunk.js"
   ]
 }

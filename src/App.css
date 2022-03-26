@@ -54,6 +54,10 @@
    margin-bottom: calc(100vh / 30);
 }
 
+.techstack {
+		margin: 0px 2px 0px 2px;
+}
+
 .title {
 	color: white;
 	border-width: 1px;

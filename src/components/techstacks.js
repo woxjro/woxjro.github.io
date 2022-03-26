@@ -34,7 +34,7 @@ export default function TechStacks({ linkInfoArr }) {
             {languages.map((techstack) => {
                let { icon, title, icon_tail } = techstack;
                return (
-                  <img
+                  <img className="techstack"
                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-${icon_tail}.svg`}
                      height="25"
                   />
@@ -47,7 +47,7 @@ export default function TechStacks({ linkInfoArr }) {
                let { icon, title, icon_tail } = techstack;
 
                return (
-                  <img
+                  <img className="techstack"
                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-${icon_tail}.svg`}
                      height="25"
                   />
@@ -61,7 +61,7 @@ export default function TechStacks({ linkInfoArr }) {
                let { icon, title, icon_tail } = techstack;
 
                return (
-                  <img
+                  <img className="techstack"
                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-${icon_tail}.svg`}
                      height="25"
                   />
