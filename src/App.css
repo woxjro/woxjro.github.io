@@ -2,7 +2,7 @@
    font-family: "Teko", sans-serif;
    font-size: large;
    text-align: center;
-   height: 100vh;
+   min-height: 100vh;
    width: 100vw;
    background-color: #22272a;
    display: flex;
@@ -51,6 +51,7 @@
 }
 
 .switchIcon {
+   margin-top: calc(100vh / 30);
    margin-bottom: calc(100vh / 30);
 }
 
@@ -63,6 +64,10 @@
 	border-width: 1px;
 	border-bottom: solid;
 	border-color: white;
+}
+
+.techStackList > .container {
+	margin: 0px 0px 20px 0px;
 }
 
 .link {
