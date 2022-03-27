@@ -53,8 +53,8 @@ function App() {
    return (
       <div className="App">
          <SwitchIcon />
-				<LinksList linkInfoArr={linkInfoArr} />
-				 <TechStacks linkInfoArr={linkInfoArr} />
+         <LinksList linkInfoArr={linkInfoArr} />
+         <TechStacks linkInfoArr={linkInfoArr} />
          <Copyright />
       </div>
    );
