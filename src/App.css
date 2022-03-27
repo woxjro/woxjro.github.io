@@ -65,6 +65,10 @@
 	border-color: white;
 }
 
+.techStackList > .container {
+	margin: 0px 0px 20px 0px;
+}
+
 .link {
    margin-bottom: calc(100vh / 80);
 }

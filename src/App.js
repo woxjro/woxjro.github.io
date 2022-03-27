@@ -41,6 +41,13 @@ function App() {
          icon: ["fas", "building"],
          linkUrl: "http://x-point-1.net/",
          linkName: "X.1",
+	  },
+      {
+         size: "lg",
+         color: "white",
+         icon: ["fas", "building"],
+         linkUrl: "https://www.co-conv.jp/",
+         linkName: "CO-CONV",
       },
    ];
    return (
