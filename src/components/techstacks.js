@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "./link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function TechStacks({ linkInfoArr }) {
    let languages = [
@@ -44,7 +45,7 @@ export default function TechStacks({ linkInfoArr }) {
             })}
          </div>
          <div className="container web">
-				 <p className="title">web/App</p>
+            <p className="title">web/App</p>
             {web.map((techstack) => {
                let { icon, title, icon_tail } = techstack;
 
@@ -60,17 +61,33 @@ export default function TechStacks({ linkInfoArr }) {
 
          <div className="container tools">
             <p className="title">tools</p>
-            {tools.map((techstack) => {
-               let { icon, title, icon_tail } = techstack;
+            <div>
+               {tools.map((techstack) => {
+                  let { icon, title, icon_tail } = techstack;
 
-               return (
-                  <img
-                     className="techstack"
-                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-${icon_tail}.svg`}
-                     height="25"
-                  />
-               );
-            })}
+                  return (
+                     <img
+                        className="techstack"
+                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-${icon_tail}.svg`}
+                        height="25"
+                     />
+                  );
+               })}
+            </div>
+
+            <div>
+               <FontAwesomeIcon
+                  className={"keyboard"}
+                  icon="fa-solid fa-keyboard"
+               />
+               <a
+                  href={
+                     "https://www.realforce.co.jp/products/R2TLA-US-BK/US3.html"
+                  }
+               >
+                  REALFORCE R2TLA-US3-BK
+               </a>
+            </div>
          </div>
       </div>
    );
