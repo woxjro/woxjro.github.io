@@ -75,7 +75,7 @@ export default function TechStacks({ linkInfoArr }) {
                })}
             </div>
 
-            <div>
+            <div className={"link"}>
                <FontAwesomeIcon
                   className={"keyboard"}
                   icon="fa-solid fa-keyboard"
