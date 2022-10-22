@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Icon from "./icon";
-import CatImg from "../images/cat.jpg";
-import MeImg from "../images/me.jpg";
+import WoxjroImg from "../images/woxjro.jpg";
 
 export default function SwitchIcon() {
-   const [isMeIcon, setIsMeIcon] = useState(true);
    return (
-      <div className="switchIcon" onClick={() => setIsMeIcon(!isMeIcon)}>
-         {isMeIcon ? <Icon img={MeImg} /> : <Icon img={CatImg} />}
+      <div className="switchIcon">
+         <Icon img={WoxjroImg} />
       </div>
    );
 }
