@@ -90,9 +90,7 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../guide/installation.html"><strong aria-hidden="true">1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../guide/configuration.html"><strong aria-hidden="true">2.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="../guide/usage.html" class="active"><strong aria-hidden="true">3.</strong> Usage</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">Contributors</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -177,9 +175,13 @@
 <p>The basic usage is as follows:</p>
 <ul>
 <li>Press <code>q</code> to exit <code>lazy-etherscan</code>.</li>
-<li>Press <code>s</code> to focus on the search bar, where you can perform searches for addresses, blocks, transactions, and more.
+<li>Press <code>s</code> to focus on the search bar. You can search by the following words.
 <ul>
-<li>TODO: ticker, address, blockid...</li>
+<li>Address</li>
+<li>Block Number</li>
+<li>ENS ID</li>
+<li>Transaction Hash</li>
+<li>Ticker Name (<code>USDT</code>, <code>BNB</code>,<code>UNI</code>, ...)</li>
 </ul>
 </li>
 <li>Press <code>1</code> to navigate the <code>Latest Blocks</code> panel. Use <code>j</code> to move to a block below and <code>k</code> to an above block.
@@ -195,6 +197,17 @@
 <li>Press <code>&lt;Ctrl+e&gt;</code> to toggle the sidebar.</li>
 <li>Press <code>&lt;Ctrl+p&gt;</code> to move to a previous screen.</li>
 </ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="searching-by-tickers"><a class="header" href="#searching-by-tickers">Searching by Tickers</a></h3>
+<p><code>USDT</code>で検索する例を紹介する。
+<code>s</code>を押して、検索バーにフォーカスする。そして、<code>i</code>を押して、編集モードに移行する。<code>USDT</code>とタイプして<code>Enter</code>を押す。
+検索結果の画面にて、左側にコントラクトのソースコード、右側にコントラクトのABIが表示されており、左右の矢印キーで相互にフォーカスが可能である。<code>j</code>/<code>k</code>キーを押すことで、フォーカスされている要素をスクロールすることができる。</p>
+<p><img src="../resources/screenshots/ticker.png" alt="demo" />
+また、<code>&lt;Ctrl+e&gt;</code>を押すことで、サイドバーをトグルすることができ、以下の画像のようにソースコードとABIを両方同時に見ることができる。
+<img src="../resources/screenshots/ticker_toggled.png" alt="demo" /></p>
+<h3 id="exploring-a-block"><a class="header" href="#exploring-a-block">Exploring a Block</a></h3>
+<p><img src="../resources/screenshots/block.png" alt="demo" />
+<img src="../resources/screenshots/block_toggled.png" alt="demo" /></p>
 
                     </main>
 
@@ -225,6 +238,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -90,9 +90,7 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../guide/installation.html"><strong aria-hidden="true">1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../guide/configuration.html" class="active"><strong aria-hidden="true">2.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="../guide/usage.html"><strong aria-hidden="true">3.</strong> Usage</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../misc/contributors.html">Contributors</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -174,17 +172,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<h2 id="ethereum-statistics"><a class="header" href="#ethereum-statistics">Ethereum Statistics</a></h2>
-<p>To see statistics information about Ethereum, you have to set an Etherscan's free API key.
-You can get it from <a href="https://etherscan.io/apis">here</a>.
-And set it to <code>api_key</code> field in <code>settings.toml</code>. You can use a setting template file (<code>settings.example.toml</code>).</p>
-<pre><code class="language-sh">$ mv ./settings.example.toml ./settings.toml
-</code></pre>
 <h2 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h2>
 <p>The default endpoint is https://eth.public-rpc.com, and you can also set your preferred endpoint.
 You can find free endpoints from <a href="https://chainlist.org/chain/1">ChainList</a>.
 To set your endpoint, run with a <code>--endpoint</code> option.</p>
-<pre><code class="language-sh">cargo run -- --endpoint=https://rpc.flashbots.net
+<pre><code class="language-sh">$ lazy-etherscan --endpoint=https://rpc.flashbots.net
 </code></pre>
 <p>In the case of the L2 blockchain networks and BSC RPC endpoints listed below,
 it has been confirmed that this software works to some extent.</p>
@@ -197,7 +189,7 @@ it has been confirmed that this software works to some extent.</p>
 </div>
 <h2 id="other-configuration"><a class="header" href="#other-configuration">Other Configuration</a></h2>
 <p>To check other configurations, run the following command.</p>
-<pre><code class="language-sh">cargo run -- --help
+<pre><code class="language-sh">$ lazy-etherscan --help
 </code></pre>
 
                     </main>
@@ -229,6 +221,22 @@ it has been confirmed that this software works to some extent.</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

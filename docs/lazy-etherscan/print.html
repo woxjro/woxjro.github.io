@@ -91,9 +91,7 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="guide/installation.html"><strong aria-hidden="true">1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="guide/configuration.html"><strong aria-hidden="true">2.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="guide/usage.html"><strong aria-hidden="true">3.</strong> Usage</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -175,36 +173,61 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><code>lazy-etherscan</code> is an Ethereum blockchain explorer that can be used from your terminal.</p>
+<p><img src="../resources/screenshots/demo.gif" alt="demo" /></p>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<ul>
+<li><strong>No Browser Required</strong> - Use it effortlessly even in environments where browsers are unavailable, such as within servers.</li>
+<li><strong>Developer Friendly</strong> - Operate efficiently using keyboard shortcuts.</li>
+<li><strong>Easily Switch Endpoints</strong> - Switch between endpoints, including Mainnet, Testnets, custom node connections, and even BSC endpoints.</li>
+<li><strong>Rich Search Functionality</strong> - You can search by the following words.
+<ul>
+<li>Address</li>
+<li>Block Number</li>
+<li>ENS ID</li>
+<li>Transaction Hash</li>
+<li>Ticker Name (<code>USDT</code>, <code>BNB</code>,<code>UNI</code>, ...)</li>
+</ul>
+</li>
+</ul>
 <h2 id="user-guide"><a class="header" href="#user-guide">User Guide</a></h2>
 <ul>
 <li><a href="guide/installation.html">Installation</a></li>
 <li><a href="guide/configuration.html">Configuration</a></li>
 <li><a href="guide/usage.html">Usage</a></li>
 </ul>
-<p>TODO</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <p>This software has been tested and verified to work correctly on the following operating systems:</p>
 <ul>
 <li><code>Ubuntu 22.04.2 LTS</code></li>
 <li><code>macOS Ventura 13.2</code></li>
 </ul>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<h3 id="optional-etherscan-api-key"><a class="header" href="#optional-etherscan-api-key">Optional: Etherscan API Key</a></h3>
+<p>To see statistics information about Ethereum, you have to set an Etherscan's free API key.
+You can get it from <a href="https://etherscan.io/apis">here</a>.
+And add it to your environment variables. If you are using <code>zsh</code>, run the following command.</p>
+<pre><code class="language-sh">$ echo 'export ETHERSCAN_API_KEY=XXXXXXXXXXXX' &gt;&gt; ~/.zshenv
+</code></pre>
+<h3 id="optional-ethereum-input-data-decoder"><a class="header" href="#optional-ethereum-input-data-decoder">Optional: <a href="https://github.com/miguelmota/ethereum-input-data-decoder"><code>ethereum-input-data-decoder</code></a></a></h3>
+<p>To see transactions' decoded input data, you have to preinstall <a href="https://github.com/miguelmota/ethereum-input-data-decoder"><code>ethereum-input-data-decoder</code></a>. Please run the following command.</p>
+<pre><code class="language-sh">$ npm install -g ethereum-input-data-decoder
+</code></pre>
+<h2 id="installation-using-cargo"><a class="header" href="#installation-using-cargo">Installation using Cargo</a></h2>
+<pre><code class="language-sh">$ cargo install lazy-etherscan
+$ lazy-etherscan
+</code></pre>
+<h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <pre><code class="language-sh">$ git clone https://github.com/woxjro/lazy-etherscan --recursive
 $ cd lazy-etherscan
 $ cargo run --
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<h2 id="ethereum-statistics"><a class="header" href="#ethereum-statistics">Ethereum Statistics</a></h2>
-<p>To see statistics information about Ethereum, you have to set an Etherscan's free API key.
-You can get it from <a href="https://etherscan.io/apis">here</a>.
-And set it to <code>api_key</code> field in <code>settings.toml</code>. You can use a setting template file (<code>settings.example.toml</code>).</p>
-<pre><code class="language-sh">$ mv ./settings.example.toml ./settings.toml
-</code></pre>
 <h2 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h2>
 <p>The default endpoint is https://eth.public-rpc.com, and you can also set your preferred endpoint.
 You can find free endpoints from <a href="https://chainlist.org/chain/1">ChainList</a>.
 To set your endpoint, run with a <code>--endpoint</code> option.</p>
-<pre><code class="language-sh">cargo run -- --endpoint=https://rpc.flashbots.net
+<pre><code class="language-sh">$ lazy-etherscan --endpoint=https://rpc.flashbots.net
 </code></pre>
 <p>In the case of the L2 blockchain networks and BSC RPC endpoints listed below,
 it has been confirmed that this software works to some extent.</p>
@@ -217,15 +240,19 @@ it has been confirmed that this software works to some extent.</p>
 </div>
 <h2 id="other-configuration"><a class="header" href="#other-configuration">Other Configuration</a></h2>
 <p>To check other configurations, run the following command.</p>
-<pre><code class="language-sh">cargo run -- --help
+<pre><code class="language-sh">$ lazy-etherscan --help
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="usage"><a class="header" href="#usage">Usage</a></h1>
 <p>The basic usage is as follows:</p>
 <ul>
 <li>Press <code>q</code> to exit <code>lazy-etherscan</code>.</li>
-<li>Press <code>s</code> to focus on the search bar, where you can perform searches for addresses, blocks, transactions, and more.
+<li>Press <code>s</code> to focus on the search bar. You can search by the following words.
 <ul>
-<li>TODO: ticker, address, blockid...</li>
+<li>Address</li>
+<li>Block Number</li>
+<li>ENS ID</li>
+<li>Transaction Hash</li>
+<li>Ticker Name (<code>USDT</code>, <code>BNB</code>,<code>UNI</code>, ...)</li>
 </ul>
 </li>
 <li>Press <code>1</code> to navigate the <code>Latest Blocks</code> panel. Use <code>j</code> to move to a block below and <code>k</code> to an above block.
@@ -241,6 +268,17 @@ it has been confirmed that this software works to some extent.</p>
 <li>Press <code>&lt;Ctrl+e&gt;</code> to toggle the sidebar.</li>
 <li>Press <code>&lt;Ctrl+p&gt;</code> to move to a previous screen.</li>
 </ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="searching-by-tickers"><a class="header" href="#searching-by-tickers">Searching by Tickers</a></h3>
+<p><code>USDT</code>で検索する例を紹介する。
+<code>s</code>を押して、検索バーにフォーカスする。そして、<code>i</code>を押して、編集モードに移行する。<code>USDT</code>とタイプして<code>Enter</code>を押す。
+検索結果の画面にて、左側にコントラクトのソースコード、右側にコントラクトのABIが表示されており、左右の矢印キーで相互にフォーカスが可能である。<code>j</code>/<code>k</code>キーを押すことで、フォーカスされている要素をスクロールすることができる。</p>
+<p><img src="guide/../resources/screenshots/ticker.png" alt="demo" />
+また、<code>&lt;Ctrl+e&gt;</code>を押すことで、サイドバーをトグルすることができ、以下の画像のようにソースコードとABIを両方同時に見ることができる。
+<img src="guide/../resources/screenshots/ticker_toggled.png" alt="demo" /></p>
+<h3 id="exploring-a-block"><a class="header" href="#exploring-a-block">Exploring a Block</a></h3>
+<p><img src="guide/../resources/screenshots/block.png" alt="demo" />
+<img src="guide/../resources/screenshots/block_toggled.png" alt="demo" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 <a href="https://github.com/woxjro/lazy-etherscan/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=woxjro/lazy-etherscan" />
@@ -264,6 +302,22 @@ it has been confirmed that this software works to some extent.</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
